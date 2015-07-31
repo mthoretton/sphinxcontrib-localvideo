@@ -11,3 +11,12 @@
 """
 
 __import__('pkg_resources').declare_namespace(__name__)
+
+
+def setup(app):
+
+    from . import localvideo
+
+    app.add_node(localvideo.localvideo,
+                 html=(localvideo.player))
+    app.add_directive('localvideo', localvideo.localvideoDirective)
