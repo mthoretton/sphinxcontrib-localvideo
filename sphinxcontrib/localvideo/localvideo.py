@@ -8,16 +8,19 @@ class localvideo(nodes.General,nodes.Element):
     pass
 
 
-def player(self, node):
+def visit(self, node):
     filepath = node.filepath
     content=u'''
-        <video>
-        <src='%s'/>
+        <video controls="">
+            <source type="video/webm" src="_static/videos/%s"></source>
+            Your browser is not supporting not support HTML5 video
         </video>
     ''' % filepath
 
-    content = "BONJOUR"
     self.body.append(content)
+
+def depart(self,node):
+    pass
 
 
 class localvideoDirective(Directive):

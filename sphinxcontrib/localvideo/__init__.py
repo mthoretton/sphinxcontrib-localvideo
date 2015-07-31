@@ -16,5 +16,5 @@ def setup(app):
     from . import localvideo
 
     app.add_node(localvideo.localvideo,
-                 html=(localvideo.player))
+                 html=(localvideo.visit,localvideo.depart))
     app.add_directive('localvideo', localvideo.localvideoDirective)
