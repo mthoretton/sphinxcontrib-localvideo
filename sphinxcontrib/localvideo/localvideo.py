@@ -4,7 +4,7 @@
 from docutils import nodes
 from docutils.parsers.rst import Directive
 
-class localvideo(nodes.Element):
+class localvideo(nodes.General,nodes.Element):
     pass
 
 
