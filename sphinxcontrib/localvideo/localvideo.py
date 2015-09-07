@@ -12,7 +12,7 @@ def visit(self, node):
     filepath = node.filepath
     content=u'''
         <video controls="">
-            <source type="video/webm" src="_static/videos/%s"></source>
+            <source type="video/webm" src="/_static/videos/%s"></source>
             Your browser is not supporting not support HTML5 video
         </video>
     ''' % filepath
