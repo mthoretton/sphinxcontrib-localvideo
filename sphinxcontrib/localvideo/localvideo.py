@@ -9,13 +9,13 @@ class localvideo(nodes.General,nodes.Element):
 
 
 def visit(self, node):
-    filepath = node.filepath
+    filename = node.filename
     content=u'''
-        <video controls="">
-            <source type="video/webm" src="_static/videos/%s"></source>
+        <video controls="" style="max-width: 100%%;">
+            <source type="video/webm" src="/_static/videos/%s"></source>
             Your browser is not supporting not support HTML5 video
         </video>
-    ''' % filepath
+    ''' % filename
 
     self.body.append(content)
 
@@ -37,6 +37,6 @@ class localvideoDirective(Directive):
         node = self.node_class()
         arg = self.arguments[0]
         node.filepath = arg
+        node.filename = arg.split("/")[-1]
         return [node]
-
 
