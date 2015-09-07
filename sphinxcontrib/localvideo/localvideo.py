@@ -9,13 +9,13 @@ class localvideo(nodes.General,nodes.Element):
 
 
 def visit(self, node):
-    filepath = node.filepath
+    filename = node.name
     content=u'''
         <video controls="">
             <source type="video/webm" src="/_static/videos/%s"></source>
             Your browser is not supporting not support HTML5 video
         </video>
-    ''' % filepath
+    ''' % filename
 
     self.body.append(content)
 
