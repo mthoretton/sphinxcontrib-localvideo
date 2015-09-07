@@ -37,6 +37,7 @@ class localvideoDirective(Directive):
         node = self.node_class()
         arg = self.arguments[0]
         node.filepath = arg
+        node.filename = arg.split("/")[-1]
         return [node]
 
 
