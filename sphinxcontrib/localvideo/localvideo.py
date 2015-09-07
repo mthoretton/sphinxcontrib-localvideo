@@ -9,7 +9,7 @@ class localvideo(nodes.General,nodes.Element):
 
 
 def visit(self, node):
-    filename = node.name
+    filename = node.path.split("/")[-1]
     content=u'''
         <video controls="">
             <source type="video/webm" src="/_static/videos/%s"></source>
